@@ -1,10 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-var A = 20;
-var B = 12;
-var C = 2;
+var A = -20;
+var B = -12;
+var C = -2;
 var D = 0;
-var E = 15;
+var E = -15;
 
 var size = sizeof(int);
 
@@ -84,6 +84,9 @@ third = minimum(third, maxC);
 third = minimum(third, maxD);
 third = minimum(third, maxE);
 
+var total = A + B + C + D + E;
+var fourth = total - first - second - third - last;
+
 
 Console.WriteLine($"Number input: {A}, {B}, {C}, {D}, {E}");
 Console.WriteLine("Number ascending order:");
@@ -93,6 +96,8 @@ Console.WriteLine("Second:");
 Console.WriteLine(second);
 Console.WriteLine("Third:");
 Console.WriteLine(third);
+Console.WriteLine("Fourth:");
+Console.WriteLine(fourth);
 Console.WriteLine("Last:");
 Console.WriteLine(last);
 
@@ -106,8 +111,9 @@ int maximum(int value1, int value2)
     return value2 - ((value2 - value1) & (value2 - value1 >> size));
 }
 
+// rabiscos de lógica
+
 /* 
- 
 0 = 0000  ---> 0 & 1  ---> 0 ||  0 >> 4 -> 0000 --> 0
 1 = 0001
 2 = 0010
@@ -144,7 +150,6 @@ val1 = 1, val2 = 3 -- saida 1
 11111111111111111111111111111110
 
 3 + (-2) = 1 
-
 
 -- maximo
 val1 = 5, val2 = 3 --> saida 5
