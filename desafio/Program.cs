@@ -1,12 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-var A = -20;
-var B = -12;
+var A = 20;
+var B = 120;
 var C = -2;
 var D = 0;
-var E = -15;
-
-var size = sizeof(int);
+var E = 15;
 
 var first = minimum(A, B);
 first = minimum(first, C);
@@ -103,12 +101,12 @@ Console.WriteLine(last);
 
 int minimum(int value1, int value2)
 {
-    return value2 + ((value1 - value2) & (value1 - value2 >> size));
+    return value2 * (1 - ((value1 - value2 >> 31) & 1)) + (value1 * ((value1 - value2 >> 31) & 1));
 }
 
 int maximum(int value1, int value2)
 {
-    return value2 - ((value2 - value1) & (value2 - value1 >> size));
+    return value1 * (1 - ((value1 - value2 >> 31) & 1)) + (value2 * ((value1 - value2 >> 31) & 1));
 }
 
 // rabiscos de lógica
